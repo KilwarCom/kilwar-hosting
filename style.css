@@ -393,6 +393,18 @@
     --animate-code-4: code-4;
     --animate-code-5: code-5;
     --animate-code-6: code-6;
+    --animate-code-7: code-7;
+    --animate-code-8: code-8;
+    --animate-code-9: code-9;
+    --animate-code-10: code-10;
+    --animate-code-11: code-11;
+    --animate-code-12: code-12;
+    --animate-code-13: code-13;
+    --animate-code-14: code-14;
+    --animate-code-15: code-15;
+    --animate-code-16: code-16;
+    --animate-code-17: code-17;
+    --animate-code-18: code-18;
     --animate-breath: breath;
     --animate-float: float;
     --animate-line: line;
@@ -1649,6 +1661,42 @@
   }
   .animate-\[code-6_10s_infinite\] {
     animation: code-6 10s infinite;
+  }
+  .animate-\[code-7_10s_infinite\] {
+    animation: code-7 10s infinite;
+  }
+  .animate-\[code-8_10s_infinite\] {
+    animation: code-8 10s infinite;
+  }
+  .animate-\[code-9_10s_infinite\] {
+    animation: code-9 10s infinite;
+  }
+  .animate-\[code-10_10s_infinite\] {
+    animation: code-10 10s infinite;
+  }
+  .animate-\[code-11_10s_infinite\] {
+    animation: code-11 10s infinite;
+  }
+  .animate-\[code-12_10s_infinite\] {
+    animation: code-12 10s infinite;
+  }
+  .animate-\[code-13_10s_infinite\] {
+    animation: code-13 10s infinite;
+  }
+  .animate-\[code-14_10s_infinite\] {
+    animation: code-14 10s infinite;
+  }
+  .animate-\[code-15_10s_infinite\] {
+    animation: code-15 10s infinite;
+  }
+  .animate-\[code-16_10s_infinite\] {
+    animation: code-16 10s infinite;
+  }
+  .animate-\[code-17_10s_infinite\] {
+    animation: code-17 10s infinite;
+  }
+  .animate-\[code-18_10s_infinite\] {
+    animation: code-18 10s infinite;
   }
   .animate-\[float_4s_ease-in-out_infinite_1s_both\] {
     animation: float 4s ease-in-out infinite 1s both;
@@ -4451,90 +4499,26 @@
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
-@keyframes code-1 {
-  0% {
-    opacity: 0;
-  }
-  2.5% {
-    opacity: 1;
-  }
-  97.5% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes code-2 {
-  16.2% {
-    opacity: 0;
-  }
-  18.75% {
-    opacity: 1;
-  }
-  97.5% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes code-3 {
-  32.5% {
-    opacity: 0;
-  }
-  35% {
-    opacity: 1;
-  }
-  97.5% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes code-4 {
-  48.75% {
-    opacity: 0;
-  }
-  51.25% {
-    opacity: 1;
-  }
-  97.5% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes code-5 {
-  65% {
-    opacity: 0;
-  }
-  72.5% {
-    opacity: 1;
-  }
-  97.5% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes code-6 {
-  81.25% {
-    opacity: 0;
-  }
-  83.75% {
-    opacity: 1;
-  }
-  97.5% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+
+@keyframes code-1  {  0% {opacity: 0;}  3% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-2  {  5% {opacity: 0;}  8% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-3  { 10% {opacity: 0;} 13% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-4  { 15% {opacity: 0;} 18% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-5  { 20% {opacity: 0;} 23% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-6  { 25% {opacity: 0;} 28% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-7  { 30% {opacity: 0;} 33% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-8  { 35% {opacity: 0;} 38% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-9  { 40% {opacity: 0;} 43% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-10 { 45% {opacity: 0;} 48% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-11 { 50% {opacity: 0;} 53% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-12 { 55% {opacity: 0;} 58% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-13 { 60% {opacity: 0;} 63% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-14 { 65% {opacity: 0;} 68% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-15 { 70% {opacity: 0;} 73% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-16 { 75% {opacity: 0;} 78% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-17 { 80% {opacity: 0;} 83% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes code-18 { 85% {opacity: 0;} 88% {opacity: 1;} 97.5% {opacity: 1;} 100% {opacity: 0;}}
+
 @keyframes breath {
   0%, 100% {
     transform: scale(0.95);

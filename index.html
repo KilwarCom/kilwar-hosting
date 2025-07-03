@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Simple HTML Demo - Home</title>
+    <title>Kilwar</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="./css/vendors/aos.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
@@ -22,11 +22,9 @@
                     <!-- Site branding -->
                     <div class="flex-1 flex items-center">
                         <!-- Logo -->
-                        <a class="inline-flex" href="index.html" aria-label="Cruip">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-                                <path class="fill-blue-500" fill-rule="evenodd" d="M15.052 0c6.914.513 12.434 6.033 12.947 12.947h-5.015a7.932 7.932 0 0 1-7.932-7.932V0Zm-2.105 22.985V28C6.033 27.487.513 21.967 0 15.053h5.015a7.932 7.932 0 0 1 7.932 7.932Z" clip-rule="evenodd"/>
-                                <path class="fill-blue-300" fill-rule="evenodd" d="M0 12.947C.513 6.033 6.033.513 12.947 0v5.015a7.932 7.932 0 0 1-7.932 7.932H0Zm22.984 2.106h5.015C27.486 21.967 21.966 27.487 15.052 28v-5.015a7.932 7.932 0 0 1 7.932-7.932Z" clip-rule="evenodd"/>
-                            </svg>
+                        <a class="inline-flex items-center space-x-2" href="index.html" aria-label="Kilwar">
+                            <img src="images/kilwar-logo.png" alt="Kilwar Logo" class="h-8 w-auto">
+                            <span class="text-3xl font-medium text-gray-900">Kilwar</span>
                         </a>
                     </div>
 
@@ -36,59 +34,16 @@
                         <!-- Desktop menu links -->
                         <ul class="text-sm flex grow justify-center flex-wrap items-center gap-4 lg:gap-8">
                             <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="pricing.html">Pricing</a>
+                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="index.html">Home</a>
                             </li>
                             <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="customers.html">Customers</a>
+                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="services.html">Services</a>
+                            </li>
+                            <li class="px-3 py-1">
+                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="about.html">About</a>
                             </li>
                             <li class="px-3 py-1">
                                 <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="blog.html">Blog</a>
-                            </li>
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="documentation.html">Docs</a>
-                            </li>
-                            <!-- 1st level: hover -->
-                            <li
-                                class="relative flex items-center gap-0.5 px-3 py-1"
-                                x-data="{ open: false }"
-                                @mouseenter="open = true"
-                                @mouseleave="open = false"
-                            >
-                                <span
-                                    class="text-gray-700 hover:text-gray-900 flex items-center cursor-pointer transition"
-                                    aria-haspopup="true"
-                                    :aria-expanded="open"
-                                >Extra</span>
-                                <button
-                                    class="shrink-0 p-1"
-                                    :aria-expanded="open"
-                                    @click.prevent="open = !open"
-                                >
-                                    <span class="sr-only">Show submenu for "Extra"</span>
-                                    <svg class="fill-gray-400" xmlns="http://www.w3.org/2000/svg" width="10" height="6">
-                                        <path d="m1.06.19 3.5 3.5 3.5-3.5 1.061 1.06-4.56 4.56L0 1.25 1.06.19Z" />
-                                    </svg>
-                                </button>
-                                <!-- 2nd level: hover -->
-                                <ul
-                                    class="origin-top-left absolute top-full left-0 w-36 bg-white p-2 rounded-xl shadow-lg shadow-black/[0.03] border border-gray-100"
-                                    x-show="open"
-                                    x-transition:enter="transition ease-out transform"
-                                    x-transition:enter-start="opacity-0 -translate-y-2"
-                                    x-transition:enter-end="opacity-100 scale-100"
-                                    x-transition:leave="transition ease-out"
-                                    x-transition:leave-start="opacity-100"
-                                    x-transition:leave-end="opacity-0"
-                                    x-cloak
-                                    @focusout="await $nextTick();!$el.contains($focus.focused()) && (open = false)"
-                                >
-                                    <li>
-                                        <a class="text-sm text-gray-700 hover:bg-gray-100 flex py-1.5 px-2 rounded-lg" href="support.html">Support center</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-sm text-gray-700 hover:bg-gray-100 flex py-1.5 px-2 rounded-lg" href="apps.html">Apps</a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
 
@@ -96,12 +51,7 @@
 
                     <!-- Desktop sign in links -->
                     <ul class="flex-1 flex justify-end items-center gap-3">
-                        <li>
-                            <a class="btn-sm text-gray-800 bg-white hover:bg-gray-50 shadow-sm" href="signin.html">Login</a>
-                        </li>
-                        <li>
-                            <a class="btn-sm text-gray-200 bg-gray-800 hover:bg-gray-900 shadow-sm" href="signup.html">Register</a>
-                        </li>
+                        
                     </ul>                    
                     
                     <!-- Mobile menu -->
@@ -134,23 +84,17 @@
                         >
                             <ul class="text-sm p-2">
                                 <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="pricing.html">Pricing</a>
+                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="index.html">Home</a>
                                 </li>
                                 <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="customers.html">Customers</a>
+                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="services.html">Services</a>
+                                </li>
+                                <li>
+                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="about.html">About</a>
                                 </li>
                                 <li>
                                     <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="blog.html">Blog</a>
-                                </li>
-                                <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="documentation.html">Docs</a>
-                                </li>
-                                <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="support.html">Support center</a>
-                                </li>
-                                <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="apps.html">Apps</a>
-                                </li>
+                                </li>                                
                             </ul>
                         </nav>
 
@@ -165,11 +109,7 @@
             
             <!-- Hero -->
             <section class="relative">
-
-                <!-- Stripes illustration -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 top-0 pointer-events-none -z-10" aria-hidden="true">
-                    <img class="max-w-none" src="./images/stripes.svg" width="768" height="432" alt="Stripes" />
-                </div>
+                
 
                 <!-- Circles -->
                 <div class="absolute left-1/2 -translate-x-1/2 -top-32 ml-[580px] pointer-events-none" aria-hidden="true">
@@ -188,28 +128,20 @@
                     <div class="pt-32 pb-12 md:pt-40 md:pb-20">
 
                         <!-- Section header -->
-                        <div class="text-center pb-12 md:pb-16">
-                            <div class="mb-6 border-y [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]" data-aos="zoom-y-out">
-                                <div class="flex justify-center -space-x-3 -mx-0.5">
-                                    <img class="rounded-full border-2 border-gray-50 box-content" src="./images/avatar-01.jpg" width="32" height="32" alt="Avatar 01" />
-                                    <img class="rounded-full border-2 border-gray-50 box-content" src="./images/avatar-02.jpg" width="32" height="32" alt="Avatar 02" />
-                                    <img class="rounded-full border-2 border-gray-50 box-content" src="./images/avatar-03.jpg" width="32" height="32" alt="Avatar 03" />
-                                    <img class="rounded-full border-2 border-gray-50 box-content" src="./images/avatar-04.jpg" width="32" height="32" alt="Avatar 04" />
-                                    <img class="rounded-full border-2 border-gray-50 box-content" src="./images/avatar-05.jpg" width="32" height="32" alt="Avatar 05" />
-                                    <img class="rounded-full border-2 border-gray-50 box-content" src="./images/avatar-06.jpg" width="32" height="32" alt="Avatar 06" />
-                                </div>
-                            </div>
-                            <h1 class="text-5xl md:text-6xl font-bold mb-6 border-y [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]" data-aos="zoom-y-out" data-aos-delay="150">The website builder you're <br class="max-lg:hidden" />looking for</h1>
+                        <div class="text-center pb-12 md:pb-16">                        
+                            <h1 class="text-5xl md:text-6xl font-bold mb-6">Kilwar</h1>
                             <div class="max-w-3xl mx-auto">
-                                <p class="text-lg text-gray-700 mb-8" data-aos="zoom-y-out" data-aos-delay="300">Simple is a modern website builder powered by AI that changes how companies create user interfaces together.</p>
+                                <p class="text-lg text-gray-700 mb-8">
+                                    AI‑First Software Development — custom web, mobile, AI, and blockchain solutions that automate, scale, and future‑proof your business.
+</p>
                                 <div class="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
                                     <div class="relative max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="450">
                                         <a class="btn text-white bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] hover:bg-[length:100%_150%] bg-[bottom] shadow-sm w-full mb-4 sm:w-auto sm:mb-0 group" href="#0">
                                             <span class="relative inline-flex items-center">
-                                                Start Free Trial <span class="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform ml-1">-&gt;</span>
+                                                Get in Touch <span class="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform ml-1">-&gt;</span>
                                             </span>
                                         </a>
-                                        <a class="btn text-gray-800 bg-white hover:bg-gray-50 shadow-sm w-full sm:w-auto sm:ml-4" href="#0">Learn More</a>
+                                        <a class="btn text-gray-800 bg-white hover:bg-gray-50 shadow-sm w-full sm:w-auto sm:ml-4" href="#0">Our Services</a>
                                     </div>
                                 </div>
                             </div>
@@ -218,18 +150,63 @@
                         <!-- Hero image -->
                         <div class="max-w-3xl mx-auto" data-aos="zoom-y-out" data-aos-delay="600">
                             <div class="relative aspect-video bg-gray-900 rounded-2xl px-5 py-3 shadow-xl before:absolute before:-inset-5 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] before:pointer-events-none after:absolute after:-inset-5 after:border-x after:[border-image:linear-gradient(to_bottom,transparent,--theme(--color-slate-300/.8),transparent)1] after:-z-10">
-                                <div class="relative flex items-center justify-between before:block before:w-[41px] before:h-[9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] before:bg-[length:16px_9px] after:w-[41px] mb-8">
-                                    <span class="text-white font-medium text-[13px]">cruip.com</span>
-                                </div>
-                                <div class="text-gray-500 text-sm font-mono [&_span]:opacity-0">
-                                    <span class="text-gray-200 animate-[code-1_10s_infinite]">npm login</span> <span class="animate-[code-2_10s_infinite]">--registry=https://npm.pkg.github.com</span><br />
-                                    <span class="animate-[code-3_10s_infinite]">--scope=@phanatic</span> <span class="animate-[code-4_10s_infinite]">Successfully logged-in.</span><br /><br />
-                                    <span class="text-gray-200 animate-[code-5_10s_infinite]">npm publish</span><br />
-                                    <span class="animate-[code-6_10s_infinite]">Package published.</span>
-                                </div>
+                            <div class="relative flex items-center justify-between before:block before:w-[41px] before:h-[9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] before:bg-[length:16px_9px] after:w-[41px] mb-8">
+                                <span class="text-white font-medium text-[13px]">kilwar.com</span>
+                            </div>
+                            <div class="text-sm font-mono text-gray-200 [&_span]:opacity-0">
+                                <!-- AI Automation -->
+                                <span class="text-lg animate-[code-1_10s_infinite]">AI Automation </span>
+                                <span class="text-lg text-green-400 animate-[code-2_10s_infinite]">✔</span><br />
+                                <span class="animate-[code-3_10s_infinite] text-gray-400">- Chatbots, process automation, and smart assistants</span><br />
+                        
+                                <!-- Custom Mobile Apps -->
+                                <span class="text-lg animate-[code-4_10s_infinite]">Custom Mobile Apps </span>
+                                <span class="text-lg text-green-400 animate-[code-5_10s_infinite]">✔</span><br />
+                                <span class="animate-[code-6_10s_infinite] text-gray-400">- iOS, Android, cross-platform, Flutter/React Native</span><br />
+                                
+                                <!-- eCommerce Solutions -->
+                                <span class="text-lg animate-[code-7_10s_infinite]">eCommerce Solutions </span>
+                                <span class="text-lg text-green-400 animate-[code-8_10s_infinite]">✔</span><br />
+                                <span class="animate-[code-9_10s_infinite] text-gray-400">- Custom storefronts, API integrations, marketplaces</span><br />
+                                
+                                <!-- Blockchain & Smart Contract Solutions -->
+                                <span class="text-lg animate-[code-10_10s_infinite]">Blockchain</span>
+                                <span class="text-lg text-green-400 animate-[code-11_10s_infinite]">✔</span><br />
+                                <span class="animate-[code-12_10s_infinite] text-gray-400">- Smart contracts, NFTs, DeFi, and more</span><br />
+                                
+                                <!-- API & Platform Engineering -->
+                                <span class="text-lg animate-[code-13_10s_infinite]">Microservices </span>
+                                <span class="text-lg text-green-400 animate-[code-14_10s_infinite]">✔</span><br />
+                                <span class="animate-[code-15_10s_infinite] text-gray-400">- Custom APIs, microservices, and platform engineering</span><br />
+                                
+                                <!-- Scalable Cloud Infrastructure -->
+                                <span class="text-lg animate-[code-16_10s_infinite]">Infrastructure </span>
+                                <span class="text-lg text-green-400 animate-[code-17_10s_infinite]">✔</span><br />
+                                <span class="animate-[code-18_10s_infinite] text-gray-400">- Cloud-native, containerized, and serverless solutions</span>
+                            </div>
                             </div>
                         </div>
+
+                        <!-- Hero image replaced with visible services list -->
                         
+                        <!-- <div class="max-w-3xl mx-auto" data-aos="zoom-y-out" data-aos-delay="600">
+                            <div class="relative aspect-video bg-gray-900 rounded-2xl px-5 py-3 shadow-xl">
+                            
+                            <div class="relative flex items-center justify-between mb-8">
+                                <span class="text-white font-medium text-[13px]">kilwar.dev</span>
+                            </div>
+                            
+                            <div class="text-green-400 text-sm font-mono space-y-2" style="all: unset; color: #4ade80; font-family: monospace; font-size: 0.875rem;">
+                                <div>✔ AI Automation</div>
+                                <div>✔ Custom Mobile Apps</div>
+                                <div>✔ eCommerce Solutions</div>
+                                <div>✔ Blockchain & Smart Contract Solutions</div>
+                                <div>✔ API & Platform Engineering</div>
+                                <div>✔ Scalable Cloud Infrastructure</div>
+                            </div>
+                            </div>
+                        </div>
+                        -->
                     </div>
 
                 </div>
