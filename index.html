@@ -1,11 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <title>Kilwar</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Kilwar is an AI-first software studio building composable platforms for eCommerce, blockchain, and cloud infrastructure. We deliver scalable, intelligent solutions."
+    />
     <link href="./css/vendors/aos.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7H44C60MTP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-7H44C60MTP");
+    </script>
   </head>
 
   <body class="font-inter antialiased bg-gray-50 text-gray-900 tracking-tight">
@@ -724,14 +742,10 @@
                         height="44"
                         alt="Testimonial 01"
                       />
-                      <div>
+                      <div flex flex-col gap-0.5>
                         <div class="font-bold">Steve Beauregard</div>
-                        <div>
-                          <a
-                            class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition"
-                            href="#0"
-                            >@gocoinsteve</a
-                          >
+                        <div class="text-xs text-gray-500">
+                          Founder (GoCoin, Regard Ventures)
                         </div>
                       </div>
                     </header>
@@ -741,9 +755,34 @@
                       payments platform. In the ten years we worked together,
                       his vision and ability to quickly grasp new concept
                       allowed Regard Ventures to meet many early project
-                      milestones.” — Steve Beauregard, Founder of GoCoin and
-                      Regard Ventures
+                      milestones.
                     </div>
+                    <footer
+                      class="mt-4 text-gray-700 flex items-center gap-2.5"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="text-gray-500"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764S8 4.044 8 5.018s-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        />
+                      </svg>
+                      <div class="text-sm">
+                        <a
+                          href="https://www.linkedin.com/in/sbeau/"
+                          class="text-sm text-gray-500 hover:text-gray-700 transition"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          sbeau
+                        </a>
+                      </div>
+                    </footer>
                   </article>
                   <!-- Item #2 -->
                   <article
@@ -755,17 +794,43 @@
                         src="./images/Lee-Fox.jpeg"
                         width="44"
                         height="44"
-                        alt="Testimonial 02"
+                        alt="Testimonial 01"
                       />
-                      <div>
+                      <div flex flex-col gap-0.5>
                         <div class="font-bold">Lee Fox</div>
+                        <div class="text-xs text-gray-500">Founder KooDooz</div>
                       </div>
                     </header>
                     <div class="grow text-sm text-gray-700">
                       Manish brought heart and sharp execution to KooDooZ — he
-                      just got what we were trying to do and made it happen.”—
-                      Lee Fox, Founder of KooDooz
+                      just got what we were trying to do and made it happen.
                     </div>
+                    <footer
+                      class="mt-4 text-gray-700 flex items-center gap-2.5"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="text-gray-500"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764S8 4.044 8 5.018s-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        />
+                      </svg>
+                      <div class="text-sm">
+                        <a
+                          href="https://www.linkedin.com/in/leefox1/"
+                          class="text-sm text-gray-500 hover:text-gray-700 transition"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          leefox1
+                        </a>
+                      </div>
+                    </footer>
                   </article>
                   <!-- Item #3 -->
                   <article
@@ -774,43 +839,47 @@
                     <header class="flex items-center gap-3 mb-4">
                       <img
                         class="shrink-0 rounded-full"
-                        src="./images/testimonial-03.jpg"
+                        src="./images/Charles-Allen.jpeg"
                         width="44"
                         height="44"
-                        alt="Testimonial 03"
+                        alt="Testimonial 01"
                       />
-                      <div>
-                        <div class="font-bold">Michele Lex</div>
-                        <div>
-                          <a
-                            class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition"
-                            href="#0"
-                            >@MikyBrown</a
-                          >
-                        </div>
+                      <div flex flex-col gap-0.5>
+                        <div class="font-bold">Charles Allen</div>
+                        <div class="text-xs text-gray-500">CEO @NasdaqBTCS</div>
                       </div>
                     </header>
                     <div class="grow text-sm text-gray-700">
-                      I've tried several website builders before, but none were
-                      as user-friendly and versatile as this one. From design to
-                      functionality, it exceeded my expectations!
+                      Working with Kilwar was seamless. They handled the
+                      architecture, integration, and front-end flow with
+                      impressive technical depth—turning our vision for a
+                      unified crypto wallet dashboard into reality.
                     </div>
                     <footer
                       class="mt-4 text-gray-700 flex items-center gap-2.5"
                     >
                       <svg
-                        class="fill-current"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="17"
-                        height="15"
-                        fill="none"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="text-gray-500"
+                        viewBox="0 0 24 24"
                       >
                         <path
-                          fill-rule="evenodd"
-                          d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z"
+                          d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764S8 4.044 8 5.018s-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                         />
                       </svg>
-                      <div class="text-xs">Mar 04, 2027</div>
+                      <div class="text-sm">
+                        <a
+                          href="https://www.linkedin.com/in/charles-allen-887899/"
+                          class="text-sm text-gray-500 hover:text-gray-700 transition"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          charles-allen-887899
+                        </a>
+                      </div>
                     </footer>
                   </article>
                   <!-- Item #4 -->
@@ -820,44 +889,49 @@
                     <header class="flex items-center gap-3 mb-4">
                       <img
                         class="shrink-0 rounded-full"
-                        src="./images/testimonial-04.jpg"
+                        src="./images/Michael-Green.jpeg"
                         width="44"
                         height="44"
-                        alt="Testimonial 04"
+                        alt="Testimonial 01"
                       />
-                      <div>
-                        <div class="font-bold">Michael Ross</div>
-                        <div>
-                          <a
-                            class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition"
-                            href="#0"
-                            >@michjack</a
-                          >
+                      <div flex flex-col gap-0.5>
+                        <div class="font-bold">Michael Green</div>
+                        <div class="text-xs text-gray-500">
+                          Chairman Dakota Financial
                         </div>
                       </div>
                     </header>
                     <div class="grow text-sm text-gray-700">
-                      Simple lives up to its name in every way. It's incredibly
-                      easy to use yet powerful enough to handle all my tasks
-                      effortlessly. It's become an essential part of my daily
-                      routine.
+                      The Kilwar team brought Trado to life from the ground
+                      up—design, architecture, and execution. They moved fast,
+                      thought deeply, and delivered a product I’m proud to
+                      launch.
                     </div>
                     <footer
                       class="mt-4 text-gray-700 flex items-center gap-2.5"
                     >
                       <svg
-                        class="fill-current"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="17"
-                        height="15"
-                        fill="none"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="text-gray-500"
+                        viewBox="0 0 24 24"
                       >
                         <path
-                          fill-rule="evenodd"
-                          d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z"
+                          d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764S8 4.044 8 5.018s-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                         />
                       </svg>
-                      <div class="text-xs">Jan 15, 2027</div>
+                      <div class="text-sm">
+                        <a
+                          href="https://www.linkedin.com/in/michael-green-96725676"
+                          class="text-sm text-gray-500 hover:text-gray-700 transition"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          michael-green-96725676
+                        </a>
+                      </div>
                     </footer>
                   </article>
                 </div>
@@ -906,7 +980,7 @@
                 >
                   <a
                     class="btn text-white bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] hover:bg-[length:100%_150%] bg-[bottom] shadow-sm w-full mb-4 sm:w-auto sm:mb-0 group"
-                    href="#0"
+                    href="contact.html"
                   >
                     <span class="relative inline-flex items-center">
                       Contact Us
@@ -947,35 +1021,44 @@
                 </svg>
               </a>
               <span class="text-sm text-gray-600 whitespace-nowrap">
-                  &copy; Kilwar.com – All rights reserved.
+                &copy; Kilwar.com – All rights reserved.
               </span>
             </div>
 
             <!-- Right: Social -->
-                <div class="flex items-center space-x-3">
-                  <a
-                    href="https://x.com/kilwar_com"
-                    aria-label="Twitter"
-                    class="text-black"
-                  >
-                    <svg
-                      class="w-8 h-8 fill-current"
-                      viewBox="0 0 32 32"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/kilwar"
-                    aria-label="Linkedin"
-                    class="text-black"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                  <!--<a
+            <div class="flex items-center space-x-3">
+              <a
+                href="https://x.com/kilwar_com"
+                aria-label="Twitter"
+                class="text-black"
+              >
+                <svg
+                  class="w-8 h-8 fill-current"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/kilwar"
+                aria-label="Linkedin"
+                class="text-black"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 32 24"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <!--<a
                     href="#"
                     aria-label="GitHub"
                     class="text-blue-500 hover:text-blue-600"
@@ -990,7 +1073,6 @@
                       ></path>
                     </svg>
                   </a> -->
-                </div>
             </div>
           </div>
         </div>
