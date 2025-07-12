@@ -1,575 +1,1013 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Kilwar</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="./css/vendors/aos.css" rel="stylesheet">
-    <link href="./style.css" rel="stylesheet">
-</head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="./css/vendors/aos.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+  </head>
 
-<body class="font-inter antialiased bg-gray-50 text-gray-900 tracking-tight">
-
+  <body class="font-inter antialiased bg-gray-50 text-gray-900 tracking-tight">
     <!-- Page wrapper -->
-    <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-
-        <!-- Site header -->
-        <header class="fixed top-2 md:top-6 w-full z-30">           
-            <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                <div class="relative flex items-center justify-between gap-3 h-14 rounded-2xl px-3 backdrop-blur-xs bg-white/90 shadow-lg shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-
-                    <!-- Site branding -->
-                    <div class="flex-1 flex items-center">
-                        <!-- Logo -->
-                        <a class="inline-flex items-center space-x-2" href="index.html" aria-label="Kilwar">
-                            <img src="images/kilwar-logo.png" alt="Kilwar Logo" class="h-8 w-auto">
-                            <span class="text-3xl font-medium text-gray-900">Kilwar</span>
-                        </a>
-                    </div>
-
-                    <!-- Desktop navigation -->
-                    <nav class="hidden md:flex md:grow">
-
-                        <!-- Desktop menu links -->
-                        <ul class="text-sm flex grow justify-center flex-wrap items-center gap-4 lg:gap-8">
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="index.html">Home</a>
-                            </li>
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="services.html">Services</a>
-                            </li>
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="about.html">About</a>
-                            </li>
-                            <li class="px-3 py-1">
-                                <a class="text-gray-700 hover:text-gray-900 flex items-center transition" href="blog.html">Blog</a>
-                            </li>
-                        </ul>
-
-                    </nav>
-
-                    <!-- Desktop sign in links -->
-                    <ul class="flex-1 flex justify-end items-center gap-3">
-                        
-                    </ul>                    
-                    
-                    <!-- Mobile menu -->
-                    <div class="flex md:hidden" x-data="{ expanded: false }">
-
-                        <!-- Hamburger button -->
-                        <button class="group inline-flex w-8 h-8 text-gray-800 bg-white text-center items-center justify-center transition" aria-controls="mobile-nav" :aria-expanded="expanded" @click.stop="expanded = !expanded">
-                            <span class="sr-only">Menu</span>
-                            <svg class="w-4 h-4 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] -translate-y-[5px] translate-x-[7px] group-aria-expanded:rotate-[315deg] group-aria-expanded:translate-y-0 group-aria-expanded:translate-x-0" y="7" width="9" height="2" rx="1"></rect>
-                                <rect class="origin-center group-aria-expanded:rotate-45 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)]" y="7" width="16" height="2" rx="1"></rect>
-                                <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] translate-y-[5px] group-aria-expanded:rotate-[135deg] group-aria-expanded:translate-y-0" y="7" width="9" height="2" rx="1"></rect>
-                            </svg>
-                        </button>                        
-
-                        <!-- Mobile navigation -->
-                        <nav
-                            id="mobile-nav"
-                            class="absolute top-full z-20 left-0 w-full bg-white rounded-xl shadow-lg shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none"
-                            @click.outside="expanded = false"
-                            @keydown.escape.window="expanded = false"
-                            x-show="expanded"
-                            x-transition:enter="transition ease-out duration-200 transform"
-                            x-transition:enter-start="opacity-0 -translate-y-2"
-                            x-transition:enter-end="opacity-100 scale-100"
-                            x-transition:leave="transition ease-out duration-200"
-                            x-transition:leave-start="opacity-100"
-                            x-transition:leave-end="opacity-0"                    
-                            x-cloak
-                        >
-                            <ul class="text-sm p-2">
-                                <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="services.html">Services</a>
-                                </li>
-                                <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="about.html">About</a>
-                                </li>
-                                <li>
-                                    <a class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2" href="blog.html">Blog</a>
-                                </li>                                
-                            </ul>
-                        </nav>
-
-                    </div>
-
-                </div>
+    <div
+      class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"
+    >
+      <!-- Site header -->
+      <header class="fixed top-2 md:top-6 w-full z-30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div
+            class="relative flex items-center justify-between gap-3 h-14 rounded-2xl px-3 backdrop-blur-xs bg-white/90 shadow-lg shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none"
+          >
+            <!-- Site branding -->
+            <div class="flex-1 flex items-center">
+              <!-- Logo -->
+              <a
+                class="inline-flex items-center space-x-2"
+                href="index.html"
+                aria-label="Kilwar"
+              >
+                <img
+                  src="images/kilwar-logo.png"
+                  alt="Kilwar Logo"
+                  class="h-8 w-auto"
+                />
+                <span class="text-3xl font-medium text-gray-900">Kilwar</span>
+              </a>
             </div>
-        </header>
 
-        <!-- Page content -->
-        <main class="grow">
-            
-            <!-- Hero -->
-            <section class="relative">
-                
+            <!-- Desktop navigation -->
+            <nav class="hidden md:flex md:grow">
+              <!-- Desktop menu links -->
+              <ul
+                class="text-sm flex grow justify-center flex-wrap items-center gap-4 lg:gap-8"
+              >
+                <li class="px-3 py-1">
+                  <a
+                    class="text-gray-700 hover:text-gray-900 flex items-center transition"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="px-3 py-1">
+                  <a
+                    class="text-gray-700 hover:text-gray-900 flex items-center transition"
+                    href="services.html"
+                    >Services</a
+                  >
+                </li>
+                <li class="px-3 py-1">
+                  <a
+                    class="text-gray-700 hover:text-gray-900 flex items-center transition"
+                    href="about.html"
+                    >About</a
+                  >
+                </li>
+                <li class="px-3 py-1">
+                  <a
+                    class="text-gray-700 hover:text-gray-900 flex items-center transition"
+                    href="contact.html"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </nav>
 
-                <!-- Circles -->
-                <div class="absolute left-1/2 -translate-x-1/2 -top-32 ml-[580px] pointer-events-none" aria-hidden="true">
-                    <div class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 opacity-50 blur-[160px] will-change-[filter]"></div>
+            <!-- Desktop sign in links -->
+            <ul class="flex-1 flex justify-end items-center gap-3"></ul>
+
+            <!-- Mobile menu -->
+            <div class="flex md:hidden" x-data="{ expanded: false }">
+              <!-- Hamburger button -->
+              <button
+                class="group inline-flex w-8 h-8 text-gray-800 bg-white text-center items-center justify-center transition"
+                aria-controls="mobile-nav"
+                :aria-expanded="expanded"
+                @click.stop="expanded = !expanded"
+              >
+                <span class="sr-only">Menu</span>
+                <svg
+                  class="w-4 h-4 fill-current pointer-events-none"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] -translate-y-[5px] translate-x-[7px] group-aria-expanded:rotate-[315deg] group-aria-expanded:translate-y-0 group-aria-expanded:translate-x-0"
+                    y="7"
+                    width="9"
+                    height="2"
+                    rx="1"
+                  ></rect>
+                  <rect
+                    class="origin-center group-aria-expanded:rotate-45 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)]"
+                    y="7"
+                    width="16"
+                    height="2"
+                    rx="1"
+                  ></rect>
+                  <rect
+                    class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] translate-y-[5px] group-aria-expanded:rotate-[135deg] group-aria-expanded:translate-y-0"
+                    y="7"
+                    width="9"
+                    height="2"
+                    rx="1"
+                  ></rect>
+                </svg>
+              </button>
+
+              <!-- Mobile navigation -->
+              <nav
+                id="mobile-nav"
+                class="absolute top-full z-20 left-0 w-full bg-white rounded-xl shadow-lg shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none"
+                @click.outside="expanded = false"
+                @keydown.escape.window="expanded = false"
+                x-show="expanded"
+                x-transition:enter="transition ease-out duration-200 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-out duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-cloak
+              >
+                <ul class="text-sm p-2">
+                  <li>
+                    <a
+                      class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2"
+                      href="index.html"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2"
+                      href="services.html"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2"
+                      href="about.html"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="flex text-gray-700 hover:bg-gray-100 rounded-lg py-1.5 px-2"
+                      href="blog.html"
+                      >Blog</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page content -->
+      <main class="grow">
+        <!-- Hero -->
+        <section class="relative">
+          <!-- Circles -->
+          <div
+            class="absolute left-1/2 -translate-x-1/2 -top-32 ml-[580px] pointer-events-none"
+            aria-hidden="true"
+          >
+            <div
+              class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 opacity-50 blur-[160px] will-change-[filter]"
+            ></div>
+          </div>
+          <div
+            class="absolute left-1/2 -translate-x-1/2 top-[420px] ml-[380px] pointer-events-none"
+            aria-hidden="true"
+          >
+            <div
+              class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-50 blur-[160px] will-change-[filter]"
+            ></div>
+          </div>
+          <div
+            class="absolute left-1/2 -translate-x-1/2 top-[640px] -ml-[300px] pointer-events-none"
+            aria-hidden="true"
+          >
+            <div
+              class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-50 blur-[160px] will-change-[filter]"
+            ></div>
+          </div>
+
+          <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <!-- Hero content -->
+            <div class="pt-32 pb-12 md:pt-40 md:pb-20">
+              <!-- Section header -->
+              <div class="text-center pb-12 md:pb-16">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Kilwar</h1>
+                <div class="max-w-3xl mx-auto">
+                  <p class="text-lg text-gray-700 mb-8">
+                    AI‑First Software Development — custom web, mobile, AI, and
+                    blockchain solutions that automate, scale, and future‑proof
+                    your business.
+                  </p>
                 </div>
-                <div class="absolute left-1/2 -translate-x-1/2 top-[420px] ml-[380px] pointer-events-none" aria-hidden="true">
-                    <div class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-50 blur-[160px] will-change-[filter]"></div>
+              </div>
+
+              <!-- Hero image -->
+              <div
+                class="max-w-3xl mx-auto"
+                data-aos="zoom-y-out"
+                data-aos-delay="600"
+              >
+                <div
+                  class="relative aspect-video bg-gray-900 rounded-2xl px-5 py-3 shadow-xl before:absolute before:-inset-5 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] before:pointer-events-none after:absolute after:-inset-5 after:border-x after:[border-image:linear-gradient(to_bottom,transparent,--theme(--color-slate-300/.8),transparent)1] after:-z-10"
+                >
+                  <div
+                    class="relative flex items-center justify-between before:block before:w-[41px] before:h-[9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] before:bg-[length:16px_9px] after:w-[41px] mb-8"
+                  >
+                    <span class="text-white font-bold text-[16px]"
+                      >Our Expertise</span
+                    >
+                  </div>
+                  <div
+                    class="text-sm font-mono text-gray-200 [&_span]:opacity-0"
+                  >
+                    <!-- AI Automation -->
+                    <span class="text-lg animate-[code-1_10s_infinite]"
+                      >AI Automation
+                    </span>
+                    <span
+                      class="text-lg text-green-400 animate-[code-2_10s_infinite]"
+                      >✔</span
+                    ><br />
+                    <span class="animate-[code-3_10s_infinite] text-gray-400"
+                      >- Chatbots, process automation, and smart
+                      assistants</span
+                    ><br />
+
+                    <!-- Custom Mobile Apps -->
+                    <span class="text-lg animate-[code-4_10s_infinite]"
+                      >Custom Mobile Apps
+                    </span>
+                    <span
+                      class="text-lg text-green-400 animate-[code-5_10s_infinite]"
+                      >✔</span
+                    ><br />
+                    <span class="animate-[code-6_10s_infinite] text-gray-400"
+                      >- iOS, Android, cross-platform, Flutter/React
+                      Native</span
+                    ><br />
+
+                    <!-- eCommerce Solutions -->
+                    <span class="text-lg animate-[code-7_10s_infinite]"
+                      >eCommerce Solutions
+                    </span>
+                    <span
+                      class="text-lg text-green-400 animate-[code-8_10s_infinite]"
+                      >✔</span
+                    ><br />
+                    <span class="animate-[code-9_10s_infinite] text-gray-400"
+                      >- Custom storefronts, API integrations, Marketplace
+                      solutions</span
+                    ><br />
+
+                    <!-- Blockchain & Smart Contract Solutions -->
+                    <span class="text-lg animate-[code-10_10s_infinite]"
+                      >Blockchain</span
+                    >
+                    <span
+                      class="text-lg text-green-400 animate-[code-11_10s_infinite]"
+                      >✔</span
+                    ><br />
+                    <span class="animate-[code-12_10s_infinite] text-gray-400"
+                      >- Smart contracts, NFTs, DeFi, and Web3 Integration</span
+                    ><br />
+
+                    <!-- API & Platform Engineering -->
+                    <span class="text-lg animate-[code-13_10s_infinite]"
+                      >Microservices
+                    </span>
+                    <span
+                      class="text-lg text-green-400 animate-[code-14_10s_infinite]"
+                      >✔</span
+                    ><br />
+                    <span class="animate-[code-15_10s_infinite] text-gray-400"
+                      >- Custom APIs, microservices, and platform
+                      engineering</span
+                    ><br />
+
+                    <!-- Scalable Cloud Infrastructure -->
+                    <span class="text-lg animate-[code-16_10s_infinite]"
+                      >Cloud Infrastructure
+                    </span>
+                    <span
+                      class="text-lg text-green-400 animate-[code-17_10s_infinite]"
+                      >✔</span
+                    ><br />
+                    <span class="animate-[code-18_10s_infinite] text-gray-400"
+                      >- Cloud-native, containerized, and serverless
+                      solutions</span
+                    >
+                  </div>
                 </div>
-                <div class="absolute left-1/2 -translate-x-1/2 top-[640px] -ml-[300px] pointer-events-none" aria-hidden="true">
-                    <div class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-50 blur-[160px] will-change-[filter]"></div>
-                </div>                
+              </div>
+            </div>
+          </div>
+        </section>
 
-                <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <!-- Core Values -->
+        <section style="padding-top: 10px" class="py-12 md:py-0">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div>
+              <!-- Section header -->
+              <div class="max-w-3xl mx-auto text-center pb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
+                <p class="text-lg text-gray-700">
+                  At Kilwar, our values guide how we think, build, and serve. We
+                  put our clients at the center of everything we do, act with
+                  clarity and integrity, and grow through continuous
+                  improvement.
+                </p>
+              </div>
+              <!-- Grid -->
+              <div
+                class="grid lg:grid-cols-3 overflow-hidden border-y [border-image:linear-gradient(to_right,transparent,var(--color-slate-200),transparent)1] *:p-6 md:*:px-10 md:*:py-12 *:relative *:before:absolute *:before:bg-linear-to-b *:before:from-transparent *:before:via-gray-200 *:before:[block-size:100%] *:before:[inline-size:1px] *:before:[inset-inline-start:-1px] *:before:[inset-block-start:0]"
+              >
+                <article>
+                  <h3 class="font-medium flex items-center space-x-2 mb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-key-round-icon lucide-key-round text-blue-500"
+                    >
+                      <path
+                        d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"
+                      />
+                      <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" />
+                    </svg>
+                    <span>Key</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-700">
+                    Client-first always. We unlock opportunity and deliver
+                    transformative value.
+                  </p>
+                </article>
+                <article>
+                  <h3 class="font-medium flex items-center space-x-2 mb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-compass-icon lucide-compass text-blue-500"
+                    >
+                      <path
+                        d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"
+                      />
+                      <circle cx="12" cy="12" r="10" />
+                    </svg>
+                    <span>Keen</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-700">
+                    Sharp thinking and principled action. We pursue truth with
+                    clarity and conviction.
+                  </p>
+                </article>
+                <article>
+                  <h3 class="font-medium flex items-center space-x-2 mb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-repeat2-icon lucide-repeat-2 text-blue-500"
+                    >
+                      <path d="m2 9 3-3 3 3" />
+                      <path d="M13 18H7a2 2 0 0 1-2-2V6" />
+                      <path d="m22 15-3 3-3-3" />
+                      <path d="M11 6h6a2 2 0 0 1 2 2v10" />
+                    </svg>
+                    <span>Kaizen</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-700">
+                    Relentless commitment to continuous improvement and
+                    innovation.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                    <!-- Hero content -->
-                    <div class="pt-32 pb-12 md:pt-40 md:pb-20">
+        <!-- Features -->
+        <section
+          class="relative before:absolute before:inset-0 before:bg-gray-900 before:-z-20"
+        >
+          <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="py-12 md:py-20">
+              <!-- Section header -->
+              <div class="max-w-3xl mx-auto text-center pb-16 md:pb-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-200">
+                  Kilwar helps your business scale with intelligent automation
+                  and custom solutions
+                </h2>
+              </div>
 
-                        <!-- Section header -->
-                        <div class="text-center pb-12 md:pb-16">                        
-                            <h1 class="text-5xl md:text-6xl font-bold mb-6">Kilwar</h1>
-                            <div class="max-w-3xl mx-auto">
-                                <p class="text-lg text-gray-700 mb-8">
-                                    AI‑First Software Development — custom web, mobile, AI, and blockchain solutions that automate, scale, and future‑proof your business.
-</p>                                
-                            </div>
-                        </div>
-
-                        <!-- Hero image -->
-                        <div class="max-w-3xl mx-auto" data-aos="zoom-y-out" data-aos-delay="600">
-                            <div class="relative aspect-video bg-gray-900 rounded-2xl px-5 py-3 shadow-xl before:absolute before:-inset-5 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] before:pointer-events-none after:absolute after:-inset-5 after:border-x after:[border-image:linear-gradient(to_bottom,transparent,--theme(--color-slate-300/.8),transparent)1] after:-z-10">
-                            <div class="relative flex items-center justify-between before:block before:w-[41px] before:h-[9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] before:bg-[length:16px_9px] after:w-[41px] mb-8">
-                                <span class="text-white font-bold text-[16px]">Our Expertise</span>
-                            </div>
-                            <div class="text-sm font-mono text-gray-200 [&_span]:opacity-0">
-                                <!-- AI Automation -->
-                                <span class="text-lg animate-[code-1_10s_infinite]">AI Automation </span>
-                                <span class="text-lg text-green-400 animate-[code-2_10s_infinite]">✔</span><br />
-                                <span class="animate-[code-3_10s_infinite] text-gray-400">- Chatbots, process automation, and smart assistants</span><br />
-                        
-                                <!-- Custom Mobile Apps -->
-                                <span class="text-lg animate-[code-4_10s_infinite]">Custom Mobile Apps </span>
-                                <span class="text-lg text-green-400 animate-[code-5_10s_infinite]">✔</span><br />
-                                <span class="animate-[code-6_10s_infinite] text-gray-400">- iOS, Android, cross-platform, Flutter/React Native</span><br />
-                                
-                                <!-- eCommerce Solutions -->
-                                <span class="text-lg animate-[code-7_10s_infinite]">eCommerce Solutions </span>
-                                <span class="text-lg text-green-400 animate-[code-8_10s_infinite]">✔</span><br />
-                                <span class="animate-[code-9_10s_infinite] text-gray-400">- Custom storefronts, API integrations, Marketplace solutions</span><br />
-                                
-                                <!-- Blockchain & Smart Contract Solutions -->
-                                <span class="text-lg animate-[code-10_10s_infinite]">Blockchain</span>
-                                <span class="text-lg text-green-400 animate-[code-11_10s_infinite]">✔</span><br />
-                                <span class="animate-[code-12_10s_infinite] text-gray-400">- Smart contracts, NFTs, DeFi, and Web3 Integration</span><br />
-                                
-                                <!-- API & Platform Engineering -->
-                                <span class="text-lg animate-[code-13_10s_infinite]">Microservices </span>
-                                <span class="text-lg text-green-400 animate-[code-14_10s_infinite]">✔</span><br />
-                                <span class="animate-[code-15_10s_infinite] text-gray-400">- Custom APIs, microservices, and platform engineering</span><br />
-                                
-                                <!-- Scalable Cloud Infrastructure -->
-                                <span class="text-lg animate-[code-16_10s_infinite]">Cloud Infrastructure </span>
-                                <span class="text-lg text-green-400 animate-[code-17_10s_infinite]">✔</span><br />
-                                <span class="animate-[code-18_10s_infinite] text-gray-400">- Cloud-native, containerized, and serverless solutions</span>
-                            </div>
-                            </div>
-                        </div>                        
+              <!-- Planet -->
+              <div class="pb-16 md:pb-20" data-aos="zoom-y-out">
+                <div class="text-center">
+                  <div
+                    class="inline-flex relative rounded-full before:absolute before:inset-0 before:-z-10 before:scale-[.85] before:bg-linear-to-b before:from-blue-900 before:to-sky-700/50 before:blur-3xl before:animate-[pulse_4s_cubic-bezier(.4,0,.6,1)_infinite] after:absolute after:inset-0 after:rounded-[inherit] after:[background:radial-gradient(closest-side,var(--color-blue-500),transparent)]"
+                  >
+                    <img
+                      class="bg-gray-900 rounded-full"
+                      src="./images/planet.png"
+                      width="400"
+                      height="400"
+                      alt="Planet"
+                    />
+                    <div class="pointer-events-none" aria-hidden="true">
+                      <img
+                        class="absolute z-10 -top-20 -right-64 max-w-none"
+                        src="./images/planet-overlay.svg"
+                        width="789"
+                        height="755"
+                        alt="Planet decoration"
+                      />
                     </div>
-
+                  </div>
                 </div>
-            </section>
+              </div>
 
-            <!-- Core Values -->
-            <section style="padding-top: 10px;" class="py-12 md:py-0">
-                <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div>
-                        <!-- Section header -->
-                        <div class="max-w-3xl mx-auto text-center pb-12">
-                            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
-                            <p class="text-lg text-gray-700">At Kilwar, our values guide how we think, build, and serve. We put our clients at the center of everything we do, act with clarity and integrity, and grow through continuous improvement.</p>
-                        </div>                        
-                        <!-- Grid -->
-                        <div class="grid lg:grid-cols-3 overflow-hidden border-y [border-image:linear-gradient(to_right,transparent,var(--color-slate-200),transparent)1] *:p-6 md:*:px-10 md:*:py-12 *:relative *:before:absolute *:before:bg-linear-to-b *:before:from-transparent *:before:via-gray-200 *:before:[block-size:100%] *:before:[inline-size:1px] *:before:[inset-inline-start:-1px] *:before:[inset-block-start:0]">
-                            <article>
-                                <h3 class="font-medium flex items-center space-x-2 mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round text-blue-500"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>
-                                <span>Key</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-700">Client-first always. We unlock opportunity and deliver transformative value.</p>
-                            </article>
-                            <article>
-                                <h3 class="font-medium flex items-center space-x-2 mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass-icon lucide-compass text-blue-500"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></svg>
-                                <span>Keen</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-700">Sharp thinking and principled action. We pursue truth with clarity and conviction.</p>
-                            </article>                            
-                            <article>
-                                <h3 class="font-medium flex items-center space-x-2 mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-repeat2-icon lucide-repeat-2 text-blue-500"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
-                                <span>Kaizen</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-700">Relentless commitment to continuous improvement and innovation.</p>
-                            </article>                                                        
-                        </div> 
-                    </div>
-                </div>
-            </section>
+              <!-- Grid -->
+              <div
+                class="grid sm:grid-cols-2 lg:grid-cols-3 overflow-hidden *:p-6 md:*:p-10 *:relative *:before:absolute *:before:bg-gray-800 *:before:[block-size:100vh] *:before:[inline-size:1px] *:before:[inset-inline-start:-1px] *:before:[inset-block-start:0] *:after:absolute *:after:bg-gray-800 *:after:[block-size:1px] *:after:[inline-size:100vw] *:after:[inset-inline-start:0] *:after:[inset-block-start:-1px]"
+              >
+                <article>
+                  <h3
+                    class="font-medium text-gray-200 flex items-center space-x-2 mb-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-brain-icon lucide-brain text-blue-500"
+                    >
+                      <path d="M12 18V5" />
+                      <path
+                        d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"
+                      />
+                      <path
+                        d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"
+                      />
+                      <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+                      <path d="M18 18a4 4 0 0 0 2-7.464" />
+                      <path
+                        d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"
+                      />
+                      <path d="M6 18a4 4 0 0 1-2-7.464" />
+                      <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
+                    </svg>
+                    <span>AI Automation</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-400">
+                    Build intelligent systems that streamline operations, reduce
+                    manual work, and make data-driven decisions
+                    automatically—from chatbots to process optimization.
+                  </p>
+                </article>
+                <article>
+                  <h3
+                    class="font-medium text-gray-200 flex items-center space-x-2 mb-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-braces-icon lucide-braces text-blue-500"
+                    >
+                      <path
+                        d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+                      />
+                      <path
+                        d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+                      />
+                    </svg>
+                    <span>Custom Development</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-400">
+                    Create tailored web and mobile applications that solve your
+                    unique business challenges with scalable, modern
+                    architecture and seamless user experiences.
+                  </p>
+                </article>
+                <article>
+                  <h3
+                    class="font-medium text-gray-200 flex items-center space-x-2 mb-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-shopping-cart-icon lucide-shopping-cart text-blue-500"
+                    >
+                      <circle cx="8" cy="21" r="1" />
+                      <circle cx="19" cy="21" r="1" />
+                      <path
+                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                      />
+                    </svg>
+                    <span>eCommerce Solutions</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-400">
+                    Custom eCommerce platforms built on Adobe Commerce and
+                    Shopify with AI-powered features that drive sales and
+                    growth.
+                  </p>
+                </article>
+                <article>
+                  <h3
+                    class="font-medium text-gray-200 flex items-center space-x-2 mb-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-tablet-smartphone-icon lucide-tablet-smartphone text-blue-500"
+                    >
+                      <rect width="10" height="14" x="3" y="8" rx="2" />
+                      <path
+                        d="M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4"
+                      />
+                      <path d="M8 18h.01" />
+                    </svg>
+                    <span>Mobile Solutions</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-400">
+                    Develop native and cross-platform mobile applications that
+                    engage users, drive business growth, and work flawlessly
+                    across iOS and Android.
+                  </p>
+                </article>
+                <article>
+                  <h3
+                    class="font-medium text-gray-200 flex items-center space-x-2 mb-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-rocket-icon lucide-rocket text-blue-500"
+                    >
+                      <path
+                        d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"
+                      />
+                      <path
+                        d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"
+                      />
+                      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                    </svg>
+                    <span>Performance Optimization</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-400">
+                    Enhance your applications with faster load times, better
+                    user experience, and scalable infrastructure that grows with
+                    your business.
+                  </p>
+                </article>
+                <article>
+                  <h3
+                    class="font-medium text-gray-200 flex items-center space-x-2 mb-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-boxes-icon lucide-boxes text-blue-500"
+                    >
+                      <path
+                        d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"
+                      />
+                      <path d="m7 16.5-4.74-2.85" />
+                      <path d="m7 16.5 5-3" />
+                      <path d="M7 16.5v5.17" />
+                      <path
+                        d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"
+                      />
+                      <path d="m17 16.5-5-3" />
+                      <path d="m17 16.5 4.74-2.85" />
+                      <path d="M17 16.5v5.17" />
+                      <path
+                        d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"
+                      />
+                      <path d="M12 8 7.26 5.15" />
+                      <path d="m12 8 4.74-2.85" />
+                      <path d="M12 13.5V8" />
+                    </svg>
+                    <span>Blockchain & Web3</span>
+                  </h3>
+                  <p class="text-[15px] text-gray-400">
+                    Implement smart contracts, DeFi solutions, and decentralized
+                    applications that position your business at the forefront of
+                    digital innovation.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <!-- Features -->
-            <section class="relative before:absolute before:inset-0 before:bg-gray-900 before:-z-20">
-                <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div class="py-12 md:py-20">
-
-                        <!-- Section header -->
-                        <div class="max-w-3xl mx-auto text-center pb-16 md:pb-20">
-                            <h2 class="text-3xl md:text-4xl font-bold text-gray-200">Kilwar helps your business scale with intelligent automation and custom solutions</h2>
-                        </div>
-
-                        <!-- Planet -->
-                        <div class="pb-16 md:pb-20" data-aos="zoom-y-out">
-                            <div class="text-center">
-                                <div class="inline-flex relative rounded-full before:absolute before:inset-0 before:-z-10 before:scale-[.85] before:bg-linear-to-b before:from-blue-900 before:to-sky-700/50 before:blur-3xl before:animate-[pulse_4s_cubic-bezier(.4,0,.6,1)_infinite] after:absolute after:inset-0 after:rounded-[inherit] after:[background:radial-gradient(closest-side,var(--color-blue-500),transparent)]">
-                                    <img class="bg-gray-900 rounded-full" src="./images/planet.png" width="400" height="400" alt="Planet" />
-                                    <div class="pointer-events-none" aria-hidden="true">
-                                        <img class="absolute z-10 -top-20 -right-64 max-w-none" src="./images/planet-overlay.svg" width="789" height="755" alt="Planet decoration" />
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Grid -->
-                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 overflow-hidden *:p-6 md:*:p-10 *:relative *:before:absolute *:before:bg-gray-800 *:before:[block-size:100vh] *:before:[inline-size:1px] *:before:[inset-inline-start:-1px] *:before:[inset-block-start:0] *:after:absolute *:after:bg-gray-800 *:after:[block-size:1px] *:after:[inline-size:100vw] *:after:[inset-inline-start:0] *:after:[inset-block-start:-1px]">
-                            <article>
-                                <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">                                    
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-icon lucide-brain text-blue-500"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>
-                                      <span>AI Automation</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-400">Build intelligent systems that streamline operations, reduce manual work, and make data-driven decisions automatically—from chatbots to process optimization.</p>
-                            </article>
-                            <article>
-                                <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-braces-icon lucide-braces text-blue-500"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
-                                      <span>Custom Development</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-400">Create tailored web and mobile applications that solve your unique business challenges with scalable, modern architecture and seamless user experiences.</p>
-                            </article>
-                            <article>
-                                <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link text-blue-500"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                                      <span>API & Integration</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-400">Connect your existing systems and build robust APIs that enable seamless data flow, third-party integrations, and microservices architecture.</p>
-                            </article>
-                            <article>
-                                <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tablet-smartphone-icon lucide-tablet-smartphone text-blue-500"><rect width="10" height="14" x="3" y="8" rx="2"/><path d="M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4"/><path d="M8 18h.01"/></svg>
-                                      <span>Mobile Solutions</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-400">Develop native and cross-platform mobile applications that engage users, drive business growth, and work flawlessly across iOS and Android.</p>
-                            </article>
-                            <article>
-                                <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket text-blue-500"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-                                      <span>Performance Optimization</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-400">Enhance your applications with faster load times, better user experience, and scalable infrastructure that grows with your business.</p>
-                            </article>
-                            <article>
-                                <h3 class="font-medium text-gray-200 flex items-center space-x-2 mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes-icon lucide-boxes text-blue-500"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>
-                                      <span>Blockchain & Web3</span>
-                                </h3>
-                                <p class="text-[15px] text-gray-400">Implement smart contracts, DeFi solutions, and decentralized applications that position your business at the forefront of digital innovation.</p>
-                            </article>                                                                                                                                            
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- Testimonials -->
-            <section class="relative before:absolute before:inset-0 before:h-[120%] before:pointer-events-none before:bg-linear-to-b before:from-gray-100 before:-z-10">            
-                <div class="pt-12 md:pt-20">
-                    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                        <div class="max-w-3xl mx-auto text-center">
-                            <h2 class="text-3xl md:text-4xl font-bold">Top startups love Simple</h2>
-                        </div>
-                    </div>
-                    <div class="relative flex justify-center max-w-[94rem] mx-auto">
-                        <div class="absolute bottom-20 -translate-x-36 -z-10" aria-hidden="true">
-                            <div class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-30 blur-[160px] will-change-[filter]"></div>
-                        </div>
-                        <div class="absolute -bottom-10 -z-10" aria-hidden="true">
-                            <div class="w-80 h-80 rounded-full bg-blue-500 opacity-40 blur-[160px] will-change-[filter]"></div>
-                        </div>                        
-                        <div class="absolute bottom-0 -z-10" aria-hidden="true">
-                            <div class="w-56 h-56 rounded-full border-[20px] border-white blur-[20px] will-change-[filter]"></div>
-                        </div>
-                        <!-- Row -->
-                        <div
-                            x-data="{}"
-                            x-init="$nextTick(() => {
+        <!-- Testimonials -->
+        <section
+          class="relative before:absolute before:inset-0 before:h-[120%] before:pointer-events-none before:bg-linear-to-b before:from-gray-100 before:-z-10"
+        >
+          <div class="pt-12 md:pt-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+              <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Testimonials</h2>
+              </div>
+            </div>
+            <div class="relative flex justify-center max-w-[94rem] mx-auto">
+              <div
+                class="absolute bottom-20 -translate-x-36 -z-10"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-80 h-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-30 blur-[160px] will-change-[filter]"
+                ></div>
+              </div>
+              <div class="absolute -bottom-10 -z-10" aria-hidden="true">
+                <div
+                  class="w-80 h-80 rounded-full bg-blue-500 opacity-40 blur-[160px] will-change-[filter]"
+                ></div>
+              </div>
+              <div class="absolute bottom-0 -z-10" aria-hidden="true">
+                <div
+                  class="w-56 h-56 rounded-full border-[20px] border-white blur-[20px] will-change-[filter]"
+                ></div>
+              </div>
+              <!-- Row -->
+              <div
+                x-data="{}"
+                x-init="$nextTick(() => {
                                 let ul = $refs.testimonials;
                                 ul.insertAdjacentHTML('afterend', ul.outerHTML);
                                 ul.nextSibling.setAttribute('aria-hidden', 'true');
                             })"
-                            class="w-full inline-flex flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)] py-12 md:py-20 group"
-                        >                       
-                            <div x-ref="testimonials" class="flex items-start justify-center md:justify-start *:mx-3 animate-[infinite-scroll_60s_linear_infinite] group-hover:[animation-play-state:paused]">
-                                <!-- Item #1 -->
-                                <article class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-                                    <header class="flex items-center gap-3 mb-4">
-                                        <img class="shrink-0 rounded-full" src="./images/testimonial-01.jpg" width="44" height="44" alt="Testimonial 01" />
-                                        <div>
-                                            <div class="font-bold">Peter Lowe</div>
-                                            <div>
-                                                <a class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition" href="#0">@peterlowex</a>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="grow text-sm text-gray-700">
-                                        As a founder, having a visually appealing and user-friendly website is essential. This tool not only helped me achieve that but also improved my site's performance and SEO.
-                                    </div>
-                                    <footer class="mt-4 text-gray-700 flex items-center gap-2.5">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="15" fill="none">
-                                            <path fill-rule="evenodd" d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z" />
-                                        </svg>
-                                        <div class="text-xs">May 19, 2027</div>
-                                    </footer>
-                                </article>
-                                <!-- Item #2 -->
-                                <article class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-                                    <header class="flex items-center gap-3 mb-4">
-                                        <img class="shrink-0 rounded-full" src="./images/testimonial-02.jpg" width="44" height="44" alt="Testimonial 02" />
-                                        <div>
-                                            <div class="font-bold">Rodri Alba</div>
-                                            <div>
-                                                <a class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition" href="#0">@rodri_spn</a>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="grow text-sm text-gray-700">
-                                        Simple has revolutionized the way I manage my work. Its intuitive interface and seamless functionality make staying organized effortless. I can't imagine my life without it.
-                                    </div>
-                                    <footer class="mt-4 text-gray-700 flex items-center gap-2.5">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="15" fill="none">
-                                            <path fill-rule="evenodd" d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z" />
-                                        </svg>
-                                        <div class="text-xs">Apr 12, 2027</div>
-                                    </footer>                                    
-                                </article>
-                                <!-- Item #3 -->
-                                <article class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-                                    <header class="flex items-center gap-3 mb-4">
-                                        <img class="shrink-0 rounded-full" src="./images/testimonial-03.jpg" width="44" height="44" alt="Testimonial 03" />
-                                        <div>
-                                            <div class="font-bold">Michele Lex</div>
-                                            <div>
-                                                <a class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition" href="#0">@MikyBrown</a>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="grow text-sm text-gray-700">
-                                        I've tried several website builders before, but none were as user-friendly and versatile as this one. From design to functionality, it exceeded my expectations!
-                                    </div>
-                                    <footer class="mt-4 text-gray-700 flex items-center gap-2.5">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="15" fill="none">
-                                            <path fill-rule="evenodd" d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z" />
-                                        </svg>
-                                        <div class="text-xs">Mar 04, 2027</div>
-                                    </footer>                                    
-                                </article>
-                                <!-- Item #4 -->
-                                <article class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none">
-                                    <header class="flex items-center gap-3 mb-4">
-                                        <img class="shrink-0 rounded-full" src="./images/testimonial-04.jpg" width="44" height="44" alt="Testimonial 04" />
-                                        <div>
-                                            <div class="font-bold">Michael Ross</div>
-                                            <div>
-                                                <a class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition" href="#0">@michjack</a>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="grow text-sm text-gray-700">
-                                        Simple lives up to its name in every way. It's incredibly easy to use yet powerful enough to handle all my tasks effortlessly. It's become an essential part of my daily routine.
-                                    </div>
-                                    <footer class="mt-4 text-gray-700 flex items-center gap-2.5">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="17" height="15" fill="none">
-                                            <path fill-rule="evenodd" d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z" />
-                                        </svg>
-                                        <div class="text-xs">Jan 15, 2027</div>
-                                    </footer>                                    
-                                </article>
-                            </div>                
-                        </div>                     
-                    </div>
-                </div>
-            </section>
-            
-            <!-- CTA -->
-            <section>                    
-                <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div class="rounded-2xl text-center relative overflow-hidden shadow-xl before:absolute before:inset-0 before:rounded-2xl before:bg-gray-900 before:pointer-events-none before:-z-10" data-aos="zoom-y-out">
-                        <!-- Glow -->
-                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 -z-10" aria-hidden="true">
-                            <div class="w-[480px] h-56 rounded-full border-[20px] border-blue-500 blur-3xl will-change-[filter]"></div>
-                        </div>                      
-                        <!-- Stripes illustration -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 top-0 pointer-events-none -z-10" aria-hidden="true">
-                            <img class="max-w-none" src="./images/stripes-dark.svg" width="768" height="432" alt="Stripes" />
-                        </div>                         
-                        <div class="py-12 md:py-20 px-4 md:px-12">
-                            <h2 class="text-3xl md:text-4xl text-gray-200 font-bold mb-6 md:mb-12 border-y [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-700/.7),transparent)1]">Create your next project with Simple</h2>
-                            <div class="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
-                                <a class="btn text-white bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] hover:bg-[length:100%_150%] bg-[bottom] shadow-sm w-full mb-4 sm:w-auto sm:mb-0 group" href="#0">
-                                    <span class="relative inline-flex items-center">
-                                        Start Free Trial <span class="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform ml-1">-&gt;</span>
-                                    </span>
-                                </a>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-        </main>
-
-        <!-- Site footer -->
-        <footer>
-            <div class="max-w-6xl mx-auto px-4 sm:px-6">
-
-                <!-- Top area: Blocks -->
-                <div class="grid sm:grid-cols-12 gap-10 py-8 md:py-12">
-
-                    <!-- 1st block -->
-                    <div class="sm:col-span-12 lg:col-span-4 space-y-2">
+                class="w-full inline-flex flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)] py-12 md:py-20 group"
+              >
+                <div
+                  x-ref="testimonials"
+                  class="flex items-start justify-center md:justify-start *:mx-3 animate-[infinite-scroll_60s_linear_infinite] group-hover:[animation-play-state:paused]"
+                >
+                  <!-- Item #1 -->
+                  <article
+                    class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none"
+                  >
+                    <header class="flex items-center gap-3 mb-4">
+                      <img
+                        class="shrink-0 rounded-full"
+                        src="./images/Steve-Beauregard.jpeg"
+                        width="44"
+                        height="44"
+                        alt="Testimonial 01"
+                      />
+                      <div>
+                        <div class="font-bold">Steve Beauregard</div>
                         <div>
-                            <!-- Logo -->
-                            <a class="inline-flex" href="index.html" aria-label="Cruip">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-                                    <path class="fill-blue-500" fill-rule="evenodd" d="M15.052 0c6.914.513 12.434 6.033 12.947 12.947h-5.015a7.932 7.932 0 0 1-7.932-7.932V0Zm-2.105 22.985V28C6.033 27.487.513 21.967 0 15.053h5.015a7.932 7.932 0 0 1 7.932 7.932Z" clip-rule="evenodd"/>
-                                    <path class="fill-blue-300" fill-rule="evenodd" d="M0 12.947C.513 6.033 6.033.513 12.947 0v5.015a7.932 7.932 0 0 1-7.932 7.932H0Zm22.984 2.106h5.015C27.486 21.967 21.966 27.487 15.052 28v-5.015a7.932 7.932 0 0 1 7.932-7.932Z" clip-rule="evenodd"/>
-                                </svg>
-                            </a>
+                          <a
+                            class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition"
+                            href="#0"
+                            >@gocoinsteve</a
+                          >
                         </div>
-                        <div class="text-sm text-gray-600">
-                            &copy; Cruip.com - All rights reserved.
+                      </div>
+                    </header>
+                    <div class="grow text-sm text-gray-700">
+                      Manish brought clarity, technical precision, and set a
+                      solid architectural foundation for GoCoin’s cryptocurrency
+                      payments platform. In the ten years we worked together,
+                      his vision and ability to quickly grasp new concept
+                      allowed Regard Ventures to meet many early project
+                      milestones.” — Steve Beauregard, Founder of GoCoin and
+                      Regard Ventures
+                    </div>
+                  </article>
+                  <!-- Item #2 -->
+                  <article
+                    class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none"
+                  >
+                    <header class="flex items-center gap-3 mb-4">
+                      <img
+                        class="shrink-0 rounded-full"
+                        src="./images/Lee-Fox.jpeg"
+                        width="44"
+                        height="44"
+                        alt="Testimonial 02"
+                      />
+                      <div>
+                        <div class="font-bold">Lee Fox</div>
+                      </div>
+                    </header>
+                    <div class="grow text-sm text-gray-700">
+                      Manish brought heart and sharp execution to KooDooZ — he
+                      just got what we were trying to do and made it happen.”—
+                      Lee Fox, Founder of KooDooz
+                    </div>
+                  </article>
+                  <!-- Item #3 -->
+                  <article
+                    class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none"
+                  >
+                    <header class="flex items-center gap-3 mb-4">
+                      <img
+                        class="shrink-0 rounded-full"
+                        src="./images/testimonial-03.jpg"
+                        width="44"
+                        height="44"
+                        alt="Testimonial 03"
+                      />
+                      <div>
+                        <div class="font-bold">Michele Lex</div>
+                        <div>
+                          <a
+                            class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition"
+                            href="#0"
+                            >@MikyBrown</a
+                          >
                         </div>
+                      </div>
+                    </header>
+                    <div class="grow text-sm text-gray-700">
+                      I've tried several website builders before, but none were
+                      as user-friendly and versatile as this one. From design to
+                      functionality, it exceeded my expectations!
                     </div>
-
-                    <!-- 2nd block -->
-                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-2 space-y-2">
-                        <h3 class="text-sm font-medium">Product</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Features</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Integrations</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Pricing & Plans</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Changelog</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Our method</a>
-                            </li>
-                        </ul>
+                    <footer
+                      class="mt-4 text-gray-700 flex items-center gap-2.5"
+                    >
+                      <svg
+                        class="fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="17"
+                        height="15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z"
+                        />
+                      </svg>
+                      <div class="text-xs">Mar 04, 2027</div>
+                    </footer>
+                  </article>
+                  <!-- Item #4 -->
+                  <article
+                    class="relative flex flex-col rounded-2xl h-full w-[22rem] p-5 shadow-lg odd:rotate-1 even:-rotate-1 group-hover:rotate-0 transition-transform duration-300 bg-white/70 shadow-black/[0.03] before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] before:[mask-composite:exclude_!important] before:pointer-events-none"
+                  >
+                    <header class="flex items-center gap-3 mb-4">
+                      <img
+                        class="shrink-0 rounded-full"
+                        src="./images/testimonial-04.jpg"
+                        width="44"
+                        height="44"
+                        alt="Testimonial 04"
+                      />
+                      <div>
+                        <div class="font-bold">Michael Ross</div>
+                        <div>
+                          <a
+                            class="text-sm font-medium text-gray-500/80 hover:text-gray-500 transition"
+                            href="#0"
+                            >@michjack</a
+                          >
+                        </div>
+                      </div>
+                    </header>
+                    <div class="grow text-sm text-gray-700">
+                      Simple lives up to its name in every way. It's incredibly
+                      easy to use yet powerful enough to handle all my tasks
+                      effortlessly. It's become an essential part of my daily
+                      routine.
                     </div>
-
-                    <!-- 3rd block -->
-                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-2 space-y-2">
-                        <h3 class="text-sm font-medium">Company</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">About us</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Diversity & Inclusion</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Blog</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Careers</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Financial statements</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 4th block -->
-                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-2 space-y-2">
-                        <h3 class="text-sm font-medium">Resources</h3>
-                        <ul class="text-sm space-y-2">
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Community</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Terms of service</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-900 transition" href="#0">Report a vulnerability</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 5th block -->
-                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-2 space-y-2">
-                        <h3 class="text-sm font-medium">Social</h3>
-                        <ul class="flex gap-1">
-                            <li>
-                                <a class="flex justify-center items-center text-blue-500 hover:text-blue-600 transition" href="#0" aria-label="Twitter">
-                                    <svg class="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex justify-center items-center text-blue-500 hover:text-blue-600 transition" href="#0" aria-label="Medium">
-                                    <svg class="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M23 8H9a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1Zm-1.708 3.791-.858.823a.251.251 0 0 0-.1.241V18.9a.251.251 0 0 0 .1.241l.838.823v.181h-4.215v-.181l.868-.843c.085-.085.085-.11.085-.241v-4.887l-2.41 6.131h-.329l-2.81-6.13V18.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472v-4.749a.416.416 0 0 0-.138-.351l-1-1.209v-.181H13.8l2.4 5.283 2.122-5.283h2.971l-.001.181Z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex justify-center items-center text-blue-500 hover:text-blue-600 transition" href="#0" aria-label="Github">
-                                    <svg class="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
+                    <footer
+                      class="mt-4 text-gray-700 flex items-center gap-2.5"
+                    >
+                      <svg
+                        class="fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="17"
+                        height="15"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.928 14.054H11.99L8.125 9.162l-4.427 4.892H1.243L6.98 7.712.928.054H5.99L9.487 4.53 13.53.054h2.454l-5.358 5.932 6.303 8.068Zm-4.26-1.421h1.36L5.251 1.4H3.793l8.875 11.232Z"
+                        />
+                      </svg>
+                      <div class="text-xs">Jan 15, 2027</div>
+                    </footer>
+                  </article>
                 </div>
-              
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section>
+          <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div
+              class="rounded-2xl text-center relative overflow-hidden shadow-xl before:absolute before:inset-0 before:rounded-2xl before:bg-gray-900 before:pointer-events-none before:-z-10"
+              data-aos="zoom-y-out"
+            >
+              <!-- Glow -->
+              <div
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 -z-10"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-[480px] h-56 rounded-full border-[20px] border-blue-500 blur-3xl will-change-[filter]"
+                ></div>
+              </div>
+              <!-- Stripes illustration -->
+              <div
+                class="absolute left-1/2 transform -translate-x-1/2 top-0 pointer-events-none -z-10"
+                aria-hidden="true"
+              >
+                <img
+                  class="max-w-none"
+                  src="./images/stripes-dark.svg"
+                  width="768"
+                  height="432"
+                  alt="Stripes"
+                />
+              </div>
+              <div class="py-12 md:py-20 px-4 md:px-12">
+                <h2
+                  class="text-3xl md:text-4xl text-gray-200 font-bold mb-6 md:mb-12 border-y [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-700/.7),transparent)1]"
+                >
+                  Create your next project with Kilwar
+                </h2>
+                <div
+                  class="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
+                >
+                  <a
+                    class="btn text-white bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] hover:bg-[length:100%_150%] bg-[bottom] shadow-sm w-full mb-4 sm:w-auto sm:mb-0 group"
+                    href="#0"
+                  >
+                    <span class="relative inline-flex items-center">
+                      Contact Us
+                      <span
+                        class="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform ml-1"
+                        >-&gt;</span
+                      >
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-gray-50 py-6">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div
+            class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0"
+          >
+            <!-- Left: Logo + Copyright -->
+            <div class="flex items-center space-x-2">
+              <a class="inline-flex" href="index.html" aria-label="Kilwar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 2000 1853"
+                  version="1.1"
+                >
+                  <path
+                    d="M 969.575 1.071 C 887.450 6.945, 808.039 36.669, 742.500 86.068 C 709.531 110.917, 677.580 143.332, 653.854 176 C 595.617 256.188, 566.922 352.259, 572.029 449.957 C 572.646 461.758, 573.523 472.108, 573.977 472.958 C 575.394 475.605, 998.864 914.500, 1000.002 914.500 C 1001.144 914.500, 1424.590 475.634, 1426.013 472.975 C 1426.473 472.116, 1427.354 461.758, 1427.971 449.957 C 1429.733 416.240, 1427.042 378.598, 1420.502 345.500 C 1400.122 242.355, 1341.891 149.675, 1257.500 86.068 C 1175.431 24.210, 1072.185 -6.268, 969.575 1.071 M 407 658.611 C 403.425 658.820, 393.633 659.673, 385.239 660.508 C 219.299 677.004, 77.218 789.969, 23.082 948.448 C -6.988 1036.474, -7.644 1130.918, 21.194 1220 C 50.921 1311.824, 113.300 1393.020, 195 1446.232 C 280.252 1501.757, 382.193 1524.993, 483.522 1511.995 C 635.850 1492.456, 765.963 1392.660, 825.109 1250 L 829.876 1238.500 610.438 1238.248 L 391 1237.996 391 1154.500 L 391 1071.004 639.526 1070.752 L 888.052 1070.500 678.980 865.500 C 471.115 661.684, 469.880 660.496, 465.204 659.832 C 459.390 659.006, 415.876 658.094, 407 658.611 M 1543.178 659.043 L 1530.856 659.952 1510.066 680.226 C 1498.631 691.377, 1404.381 783.750, 1300.622 885.500 L 1111.969 1070.500 1360.484 1070.752 L 1609 1071.004 1609 1154.500 L 1609 1237.996 1389.562 1238.248 L 1170.124 1238.500 1174.891 1250 C 1214.768 1346.183, 1287.421 1424.171, 1380.588 1470.803 C 1488.874 1525.002, 1618.165 1530.152, 1731 1484.762 C 1785.015 1463.033, 1832.423 1431.648, 1874.066 1390.049 C 1922.250 1341.916, 1958.268 1283.439, 1978.806 1220 C 2007.644 1130.918, 2006.988 1036.474, 1976.918 948.448 C 1922.899 790.311, 1782.459 678.312, 1615.890 660.533 C 1597.986 658.622, 1559.559 657.835, 1543.178 659.043 M 628.500 1768.627 C 599.350 1814.068, 575.350 1851.641, 575.167 1852.123 C 574.976 1852.625, 756.778 1853, 1000 1853 C 1243.222 1853, 1425.024 1852.625, 1424.833 1852.123 C 1424.650 1851.641, 1400.650 1814.068, 1371.500 1768.627 L 1318.500 1686.008 1000 1686.008 L 681.500 1686.008 628.500 1768.627"
+                    stroke="none"
+                    fill="#3366FF"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <span class="text-sm text-gray-600 whitespace-nowrap">
+                &copy; Kilwar.com – All rights reserved.
+              </span>
             </div>
 
-            <!-- Big text -->
-            <div class="relative -mt-16 h-60 w-full -z-10" aria-hidden="true">              
-                <div class="absolute left-1/2 pointer-events-none -z-10 -translate-x-1/2 text-[348px] leading-none text-center font-bold before:content-['Simple'] before:bg-linear-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:text-transparent before:bg-clip-text after:content-['Simple'] after:absolute after:inset-0 after:bg-gray-300/70 after:text-transparent after:bg-clip-text after:[text-shadow:0_1px_0_white] after:mix-blend-darken"></div>
-                <!-- Glow -->
-                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3" aria-hidden="true">
-                    <div class="w-56 h-56 rounded-full border-[20px] border-blue-700 blur-[80px] will-change-[filter]"></div>
-                </div>                    
+            <!-- Right: Social -->
+            <div class="flex items-center space-x-3">
+              <!--<a
+                href="#"
+                aria-label="Twitter"
+                class="text-blue-500 hover:text-blue-600"
+              >
+                <svg
+                  class="w-8 h-8 fill-current"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="Medium"
+                class="text-blue-500 hover:text-blue-600"
+              >
+                <svg
+                  class="w-8 h-8 fill-current"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23 8H9a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1Zm-1.708 3.791-.858.823a.251.251 0 0 0-.1.241V18.9a.251.251 0 0 0 .1.241l.838.823v.181h-4.215v-.181l.868-.843c.085-.085.085-.11.085-.241v-4.887l-2.41 6.131h-.329l-2.81-6.13V18.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472v-4.749a.416.416 0 0 0-.138-.351l-1-1.209v-.181H13.8l2.4 5.283 2.122-5.283h2.971l-.001.181Z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="GitHub"
+                class="text-blue-500 hover:text-blue-600"
+              >
+                <svg
+                  class="w-8 h-8 fill-current"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z"
+                  ></path>
+                </svg>
+              </a>-->
             </div>
-        </footer>
-
+          </div>
+        </div>
+      </footer>
     </div>
 
-    <script src="./js/vendors/focus.min.js" defer></script><!-- Focus plugin: https://alpinejs.dev/plugins/focus -->
+    <script src="./js/vendors/focus.min.js" defer></script>
+    <!-- Focus plugin: https://alpinejs.dev/plugins/focus -->
     <script src="./js/vendors/alpinejs.min.js" defer></script>
     <script src="./js/vendors/aos.js"></script>
     <script src="./js/main.js"></script>
-
-</body>
-
+  </body>
 </html>
